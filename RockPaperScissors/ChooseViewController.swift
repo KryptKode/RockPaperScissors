@@ -15,7 +15,7 @@ class ChooseViewController: UIViewController {
         let controller : ResultViewController = storyboard?.instantiateViewController(withIdentifier: "result" )
             as! ResultViewController
         
-        controller.userChoice = sender.tag
+        controller.choiceByUser = sender.tag
         
         present(controller, animated: true, completion: nil)
     }
@@ -28,7 +28,7 @@ class ChooseViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "scissorsToResult" || segue.identifier == "showResult" {
             let controller = segue.destination as! ResultViewController
-            controller.userChoice = (sender as! UIButton).tag
+            controller.choiceByUser = (sender as! UIButton).tag
         }
     }
 }
